@@ -37,9 +37,9 @@ do <- function() {
   ## Do the update, and log it
   data_dir <- Sys.getenv("OPENSHIFT_DATA_DIR")
   log_file <- file.path(data_dir, "update-crandb.log")
-  cat(format(Sys.time()), " updating... ", file = log_file)
+  cat(format(Sys.time()), " updating... ", file = log_file, append = TRUE)
   crandb:::crandb_update()
-  cat("DONE\n", file = log_file)
+  cat("DONE\n", file = log_file, append = TRUE)
 }
 
 do()
