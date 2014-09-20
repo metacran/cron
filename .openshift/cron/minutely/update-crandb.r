@@ -20,7 +20,9 @@ do <- function() {
   ## Yes, this is a race condition, but it not critical if
   ## we remove someone else's pid
   clean_pid <- function() {
-    if (scan(pid_file)[1] == pid) { try(unlink(pid_file), silent = TRUE) }
+    if (scan(pid_file, quiet = TRUE)[1] == pid) {
+      try(unlink(pid_file), silent = TRUE)
+    }
   }
   on.exit(clean_pid(), add = TRUE)
 
