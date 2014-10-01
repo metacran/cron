@@ -40,6 +40,9 @@ do <- function() {
   cat(format(Sys.time()), " updating... ", file = log_file, append = TRUE)
   crandb:::crandb_update()
   cat("DONE\n", file = log_file, append = TRUE)
+
+  ## Pushmon notification, that we are alive
+  httr::GET("http://pshmn.com/eHGnGa")
 }
 
 do()
