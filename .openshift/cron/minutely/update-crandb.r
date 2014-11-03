@@ -27,6 +27,7 @@ do <- function() {
   on.exit(clean_pid(), add = TRUE)
 
   ## Load packages
+  library(methods)
   library(crandb)
 
   ## Set up config
