@@ -30,8 +30,12 @@ do <- function() {
   library(crandb)
 
   ## Set up config
-  crandb:::couchdb_server("https://db.r-pkg.org/")
-  crandb:::couchdb_server("https://db.r-pkg.org:6984/cran", root = TRUE)
+
+  non_root <- list(list(uri = "https://db.r-pkg.org/", priority = 10))
+  root <- list(list(uri = "https://db.r-pkg.org:6984/cran",
+                    priority = 10))
+  crandb:::couchdb_server(non_root)
+  crandb:::couchdb_server(root, root = TRUE)
   options(repos = structure(c(CRAN = "http://cran.r-project.org")))
 
   ## Do the update, and log it
