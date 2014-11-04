@@ -30,7 +30,7 @@ rm -rf r-builder
 trap "rm -rf /tmp/r-builder" SIGINT SIGTERM
 
 git clone -b travis-devel --single-branch \
-    https://github.com/gaborcsardi/r-builder.git
+    https://github.com/metacran/r-builder.git
 cd r-builder
 git fetch origin semaphore-devel:refs/remotes/origin/semaphore-devel
 
