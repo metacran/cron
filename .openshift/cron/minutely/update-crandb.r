@@ -32,7 +32,7 @@ do <- function() {
 
   ## Set up config
 
-  root <- list(list(uri = "https://db.r-pkg.org:6984/cran",
+  root <- list(list(uri = "https://crandb.r-pkg.org:6984/cran",
                     priority = 10))
   crandb:::couchdb_server(root, root = TRUE)
   options(repos = structure(c(CRAN = "http://cran.r-project.org")))
