@@ -9,7 +9,6 @@ do <- function() {
   on.exit(close(con))
 
   views <- readRDS(con)
-  names <- vapply(v, "[[", "", "name")
   for (v in views) {
     httr::GET(paste0("http://docs.r-pkg.org/api/build/task-view/", v$name))
   }
