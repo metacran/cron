@@ -11,7 +11,7 @@ if [ -f "$ETAGFILE" ]; then
     old_etag=$(cat "$ETAGFILE")
 fi
 
-etag=$(curl -I -s http://svn.r-project.org/R/ -X HEAD |
+etag=$(curl -I -s https://svn.r-project.org/R/ -X HEAD |
 	      grep ETag | cut -f2 -d" ")
 
 if [ "$etag" == "$old_etag" ]; then
