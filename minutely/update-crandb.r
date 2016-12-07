@@ -1,4 +1,4 @@
-#! /sandbox/r/bin/Rscript
+#! /usr/bin/env Rscript
 
 ## We need to create a function, because we want to use
 ## on.exit.

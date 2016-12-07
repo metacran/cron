@@ -1,4 +1,4 @@
-#! /sandbox/r/bin/Rscript
+#! /usr/bin/env Rscript
 
 ## It is better to create a function, so that you can use on.exit.
 
