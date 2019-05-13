@@ -7,20 +7,20 @@ do <- function() {
 
   ## Load packages
   library(methods)
-  library(crandb)
+  library(pkgsearch)
 
   ## Set up config
 
   root <- list(list(uri = "https://crandb.r-pkg.org:6984/cran",
                     priority = 10))
-  crandb:::couchdb_server(root, root = TRUE)
+  pkgsearch:::couchdb_server(root, root = TRUE)
   options(repos = structure(c(CRAN = "https://cloud.r-project.org")))
 
   ## Do the update, and log it
   data_dir <- "."
   log_file <- file.path(data_dir, "update-crandb.log")
   cat(format(Sys.time()), " updating... ", file = log_file, append = TRUE)
-  events <- crandb:::crandb_update()
+  events <- pkgsearch:::crandb_update()
 
   cat("new: ", file = log_file, append = TRUE)
   for (p in events$new) {
