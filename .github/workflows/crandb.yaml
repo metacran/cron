@@ -18,5 +18,4 @@ jobs:
     steps:
       - name: Update
         run: |
-          Rscript update-crandb.R
-
+          Rscript /root/update-crandb.R
