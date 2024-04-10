@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/r-hub/cron/crandb:0.0.1
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
       env:
         COUCHDB_PASSWORD: ${{ secrets.COUCHDB_PASSWORD }}
     steps:
