@@ -1,0 +1,10 @@
+services:
+  crandb:
+    platform: linux/amd64
+    image: "ghcr.io/r-hub/cron/crandb:0.0.1"
+    build:
+      context: crandb
+    environment:
+    - COUCHDB_USER=admin
+    - COUCHDB_PASSWORD=${COUCHDB_PASSWORD}
+    command: Rscript update-crandb.R

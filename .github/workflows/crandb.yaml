@@ -1,0 +1,19 @@
+name: Update CRAN@GH
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '45 * * * *'
+
+jobs:
+  gh-update:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/r-hub/cron/crandb:0.0.1
+      env:
+        COUCHDB_PASSWORD: ${{ secrets.COUCHDB_PASSWORD }}
+    steps:
+      - name: Update
+        run: |
+          Rscript update-crandb.R
+
