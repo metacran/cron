@@ -1,4 +1,4 @@
-name: Update CRAN@GH
+name: Update CRANDB
 
 on:
   workflow_dispatch:
