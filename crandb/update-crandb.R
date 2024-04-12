@@ -24,15 +24,11 @@ do <- function() {
 
   cat("new: ", file = log_file, append = TRUE)
   for (p in events$new) {
-    Sys.sleep(1)
-    httr::GET(paste0("http://cranatgh.jenkins.r-pkg.org/add/", p))
     cat(p, "", file = log_file, append = TRUE)
   }
 
   cat("updated: ", file = log_file, append = TRUE)
   for (p in events$updated) {
-    Sys.sleep(1)
-    httr::GET(paste0("http://cranatgh.jenkins.r-pkg.org/add/", p))
     cat(p, "", file = log_file, append = TRUE)
   }
 
