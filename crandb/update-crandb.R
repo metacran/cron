@@ -14,7 +14,7 @@ do <- function() {
   root <- list(uri = "https://crandb.r-pkg.org:2053/cran",
                priority = 10)
   crandb:::couchdb_server(root, root = TRUE)
-  options(repos = structure(c(CRAN = "https://cloud.r-project.org")))
+  options(repos = structure(c(CRAN = "https://cran.r-project.org")))
 
   ## Do the update, and log it
   data_dir <- "."
