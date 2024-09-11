@@ -35,9 +35,6 @@ do <- function() {
   cat("archived: ", paste(collapse = " ", events$archived),
       file = log_file, append = TRUE)
   cat("DONE\n", file = log_file, append = TRUE)
-
-  ## Pushmon notification, that we are alive
-  httr::GET("http://pshmn.com/eHGnGa")
 }
 
 do()
